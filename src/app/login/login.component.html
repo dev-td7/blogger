@@ -1,0 +1,16 @@
+<div style="width: 100%; height: calc(100% - 100px);">
+    <div class="container">
+        <p style="text-align: center; font-family: 'Calibri';font-size: 1.5em;margin-bottom: 40px;">share your ideas with the world! login here</p>
+        <form>
+            <div class="input_wrapper"><div class="input_td_div">
+                <input id="uname" class="input_td" type="text" name="uname" [(ngModel)]='uname' autocomplete="off" required/>
+                <label class="label_td" for="uname">username</label>
+            </div></div><br/>
+            <div class="input_wrapper"><div class="input_td_div">
+                <input id="pwd" class="input_td" type="password" name="pwd" [(ngModel)]='pwd' autocomplete="off" required/>
+                <label class="label_td" for="pwd">password</label>
+            </div></div><br>
+            <input class="btn_td" style="background-color: #90CAF9;" type="submit" value="Login" (click) = submit()/>
+        </form>
+    </div>
+</div>

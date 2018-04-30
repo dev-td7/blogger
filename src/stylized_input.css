@@ -1,0 +1,36 @@
+.input_wrapper{
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px;
+}
+.input_td_div{
+    display: inline-block;
+    position: relative;
+    margin: 0 100% 0 0;
+    height: 30px;
+}
+.label_td{
+    position: absolute;
+    top: -2px;
+    left: 5px;
+    font-size: 17px;
+    transition-duration: 0.5s;
+    z-index: 0;
+}
+.input_td:focus{
+    border-bottom: 1px solid #1E88E5;
+}
+.input_td:focus ~ .label_td, .input_td:valid ~ .label_td{
+    top: -22px;
+    left: 0px;
+    transition-duration: 0.5s;
+}
+.input_td{
+    width: 200px;
+    border: none;
+    border-bottom: 0.3px solid black;
+    outline: none;
+    font-size: 15px;
+    padding-bottom: 3px;
+    z-index: 9;
+}

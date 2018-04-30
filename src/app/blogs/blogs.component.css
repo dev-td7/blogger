@@ -1,0 +1,14 @@
+#new_post{
+	font-size: 20px;
+	padding: 10px 15px;
+	background: #5C6BC0;
+	color: white;
+	text-decoration: none;
+}
+a:visited{
+	color: blue;
+}
+.options{
+	width: 100%;
+	display:inline-block;
+}

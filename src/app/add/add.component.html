@@ -1,0 +1,13 @@
+<div style="width: 100%; height: calc(100% - 100px);">
+    <div class="container">
+        <p style="text-align: center; font-family: 'Calibri';font-size: 1.5em;margin-bottom: 40px;">Share your ideas with the world! Write a post</p>
+        <form>
+            <div class="input_wrapper"><div class="input_td_div">
+                <input style="width: 700px;font-size: 17px;font-weight: bold;" id="title" class="input_td" type="text" name="title" [(ngModel)]='new_post.title' autocomplete="off" required/>
+                <label style="font-weight: bold" class="label_td" for="uname">Title</label>
+            </div></div><br/>
+            <textarea id="content" [(ngModel)]='new_post.content' name="content" placeholder="Write your post here"></textarea><br/>
+            <input class="btn_td" style="background-color: #90CAF9;" type="submit" value="Post" (click) = submit()/>
+        </form>
+    </div>
+</div>

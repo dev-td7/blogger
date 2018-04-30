@@ -1,0 +1,26 @@
+textarea{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    width: 100%;
+    max-width: 700px;
+    height: 200px;
+}
+.container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 900px;
+    height: 420px;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0.1px 0.1px 22px #0000001f;
+}
+*{
+    font-family: 'Calibri';
+}
+label{
+    cursor: text;
+}
