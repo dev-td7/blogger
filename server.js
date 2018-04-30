@@ -20,5 +20,5 @@ const api = require('./api.js');
 app.use('/db', api);
 
 app.get('*', function(req, res){
-    res.sendFile('T:/tejas/coding workspace/web development/ait related/blogger/dist/index.html');
+    res.sendFile('./dist/index.html');
 });
