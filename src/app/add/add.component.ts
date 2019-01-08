@@ -28,8 +28,8 @@ export class AddComponent implements OnInit {
   }
 
   submit = function(){
+    // console.log(this.new_post);
     this.postservice.addPost(this.new_post);
-    location.assign('./post/'+this.new_post.id);
   }
 
 }

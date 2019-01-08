@@ -24,7 +24,6 @@ export class EditComponent implements OnInit {
     var confirmation = confirm('Save current changes?');
     if(confirmation){
       this.postservice.updatePost(this.post);
-      history.back();
     }
   }
 }

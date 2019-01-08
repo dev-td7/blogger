@@ -37,10 +37,13 @@ export class PostService {
   addPost(new_post){
     let header = new Headers({'Content-Type': 'application/json'});
     
-    this.http.post('./db/posts',new_post, {headers: header})
+    this.http.post('./db/posts', new_post, {headers: header})
     .subscribe(data => {
       this.http.post('./db/counts', {last_count: new_post.id}, {headers: header})
-      .subscribe(data => {}, err => {
+      .subscribe(data => {
+        console.log('Added post + updated count');
+        location.assign('/post/' + new_post.id);
+      }, err => {
         console.log('Error occurred while updating last count, when updating post with ID: '+new_post.id+', Message -> '+err);
         this.deletePost(new_post);
       });
@@ -51,8 +54,11 @@ export class PostService {
   }
 
   deletePost(post_num):void{
+    console.log('Delete requested for post with ID: '+post_num);
     this.http.delete('./db/posts/'+post_num)
-    .subscribe(data => {}, err => {
+    .subscribe((res) => {
+      location.assign('/');
+    }, (err)=>{
       console.log('Error occurred while deleting post with ID: '+post_num+', Message -> '+err);
     });
   }
@@ -60,7 +66,9 @@ export class PostService {
   updatePost(new_post:Post):void{
     let header = new Headers({'Content-Type': 'application/json'});
     this.http.put('./db/posts/'+new_post.id, new_post, {headers: header})
-    .subscribe(data => {}, err => {
+    .subscribe(data => {
+      location.assign('/post/' + new_post.id);
+    }, err => {
       console.log('Error occurred while updating post with ID: '+new_post.id+', Message -> '+err);
     })
   }

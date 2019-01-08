@@ -8,7 +8,8 @@ mongodb.connect('mongodb://localhost:27017/ait', function(err, database){
     console.log("Connected!");
     const db = database.db('ait');
     var ait = db.collection("ait");
-    var count = db.collection("counts");
+    const countdb = database.db('count');
+    var count = countdb.collection('count');
 
     router.get('/', (req,res)=>{
         res.send('Hi');
@@ -18,7 +19,6 @@ mongodb.connect('mongodb://localhost:27017/ait', function(err, database){
         var post_num = req.params.num;
         ait.find({id: Number.parseInt(post_num)}).toArray(function(err,result){
             if(err) throw err;
-            // console.log({id: Number.parseInt(post_num)});
             res.json(result);
         })
     });
@@ -39,7 +39,7 @@ mongodb.connect('mongodb://localhost:27017/ait', function(err, database){
 
     router.delete('/posts/:num', (req,res)=>{
         var post_num = Number.parseInt(req.params.num);
-        ait.deleteOne({id: post_num}, function(err,result){
+        ait.remove({id: post_num}, function(err,result){
             if(err) throw err;
             res.send('Done');
         })

@@ -1,9 +1,19 @@
 #new_post{
-	font-size: 20px;
+	font-size: 17px;
 	padding: 10px 15px;
-	background: #5C6BC0;
+	background: transparent;
 	color: white;
 	text-decoration: none;
+	width: 100%;
+	text-align: left;
+	color: #5C6BC0;
+	border: 0px solid transparent;
+	transition-duration: 0.5s;
+	cursor: pointer;
+}
+#new_post:hover{
+	box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+	transition-duration: 0.5s;
 }
 a:visited{
 	color: blue;

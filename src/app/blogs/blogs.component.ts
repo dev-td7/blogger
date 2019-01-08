@@ -22,11 +22,12 @@ export class BlogsComponent implements OnInit {
   }
 
   deletePost = function(post_num){
-    console.log('Received request to delete post #'+post_num);
     var confirmation = confirm('Are you sure you want to delete this post?');
     if(confirmation){
-      this.postservice.deletePost(post_num);
-      location.reload();
+      console.log('Received request to delete post #'+post_num);
+      if(this.postservice.deletePost(post_num)) {
+        location.reload();
+      }
     }
   }
 

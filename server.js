@@ -20,5 +20,5 @@ const api = require('./api.js');
 app.use('/db', api);
 
 app.get('*', function(req, res){
-    res.sendFile('./dist/index.html');
+    res.sendFile(__dirname+'/dist/index.html');
 });

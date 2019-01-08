@@ -19,8 +19,8 @@ html{
     margin: 10px auto;
 }
 .post{
-    border: 1px solid black;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    /* border: 1px solid black; */
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
     padding: 10px 25px;
     text-align: left;
     margin: 40px 0;

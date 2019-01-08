@@ -22,8 +22,8 @@ export class PostComponent implements OnInit {
   deletePost(post_num){
     var confirmation = confirm('Are you sure you want to delete this post?');
     if(confirmation){
+      console.log('Delete requested for post with ID: '+post_num);
       this.postservice.deletePost(post_num);
-      history.back();
     }
   }
 }
